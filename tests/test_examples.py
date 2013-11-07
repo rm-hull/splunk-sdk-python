@@ -79,6 +79,10 @@ class ExamplesTestCase(testlib.SDKTestCase):
         result = run("binding1.py")
         self.assertEquals(result, 0)
 
+    def test_build_dir_exists(self):
+        result = os.path.exists("../build")
+        self.assertTrue(result)
+
     def test_conf(self):
         try:
             conf = self.service.confs['server']

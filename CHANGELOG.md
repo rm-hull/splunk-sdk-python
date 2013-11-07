@@ -1,5 +1,16 @@
 # Splunk SDK for Python Changelog
 
+## Version 1.2
+
+### New Features
+
+* Corrected some documentation in the modular input source files
+
+* When running `python setup.py dist`, create the `build` directory if it 
+doesn't exist yet, instead of throwing an error
+
+* Added a test for checking if `build` directory exists.
+
 ## Version 1.1
 
 ### New features and APIs
