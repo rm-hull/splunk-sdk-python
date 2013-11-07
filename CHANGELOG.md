@@ -4,12 +4,11 @@
 
 ### New Features
 
-* Corrected some documentation in the modular input source files
+* Corrected documentation in the source files for modular inputs.
 
-* When running `python setup.py dist`, create the `build` directory if it 
-doesn't exist yet, instead of throwing an error
+* Added a test to determine whether the `build` directory exists.
 
-* Added a test for checking if `build` directory exists.
+* When `python setup.py dist` is run, a `build` directory is created if it doesn't exist.
 
 ## Version 1.1
 
