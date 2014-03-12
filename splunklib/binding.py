@@ -1164,6 +1164,30 @@ class ResponseReader(object):
         r = r + self._response.read(size)
         return r
 
+    def readable(self):
+        """ Indicates that the response reader is readable."""
+        return True
+
+    def readinto(self, byte_array):
+        """ Read data into a byte array, upto the size of the byte array.
+
+        :param byte_array: A byte array/memory view to pour bytes into.
+        :type byte_array: ``bytearray`` or ``memoryview``i
+
+        """
+        max_size = len(byte_array)
+        data = self.read(max_size)
+        bytes_read = len(data)
+        print "Bytes read: ", bytes_read
+        byte_array[:bytes_read] = data
+        return bytes_read
+
+    @property
+    def closed(self):
+        """True if the stream is closed."""
+        print "Checking closed??"
+        return self.empty
+
 
 def handler(key_file=None, cert_file=None, timeout=None):
     """This class returns an instance of the default HTTP request handler using
