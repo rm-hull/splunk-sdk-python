@@ -1178,14 +1178,12 @@ class ResponseReader(object):
         max_size = len(byte_array)
         data = self.read(max_size)
         bytes_read = len(data)
-        print "Bytes read: ", bytes_read
         byte_array[:bytes_read] = data
         return bytes_read
 
     @property
     def closed(self):
         """True if the stream is closed."""
-        print "Checking closed??"
         return self.empty
 
 
